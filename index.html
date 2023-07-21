@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link favicon image -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+
+    <!-- Link Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Link Sweet Alert -->
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Website Title -->
+    <title>Welcome | Phone X Store</title>
+</head>
+
+<body>
+    <header>
+        <!-- header title section start -->
+        <div class="collapse bg-light" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-dark">Find the phone of your choice</h4>
+                        <p class="text-muted">We do not gurantee that the information on this page is 100% accurate
+                            notes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header title section end -->
+
+        <!-- nav bar section start -->
+        <div class="navbar navbar-light bg-light shadow-sm py-3">
+            <div class="container">
+                <img class="img-fluid icon" src="./images/logo.png" alt="">
+                <a href="" class="navbar-brand d-flex align-items-center">
+                    <strong class="title">Phone X Store</strong>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <!-- nav bar section end -->
+    </header>
+
+    <main>
+        <!-- input section start -->
+        <div class="container">
+            <div class="input-group mb-3 mx-auto my-5 search-input">
+                <input id="search-field" type="text" class="form-control" placeholder="Search your phone..."
+                    aria-label="" aria-describedby="button-addon2">
+                <button id="search-btn" onclick="searchPhones()" class="btn btn-outline-secondary" type="button"
+                    id="button-addon2">Search</button>
+            </div>
+        </div>
+        <!-- input section end -->
+
+        <div class="found-div">
+            <p class="found-length">Found: <span id="found-length"></span></p>
+        </div>
+
+        <!-- display phones section start -->
+        <div class="album bg-body">
+            <div class="container">
+                <div id="phones" class="row row-cols-1 row-cols-sm-3 row-cols-md-3 row-cols-lg-4 g-4">
+                </div>
+            </div>
+        </div>
+
+        <button onclick="showAllPhones()" id="show-all" class="btn btn-dark">Show All</button>
+        <!-- display phones section end -->
+
+        <!-- Modal start -->
+        <div class="modal fade" id="single" tabindex="-1" aria-labelledby="singleLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title m-auto"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="mb-3" src="" />
+                        <p id="release-date" class="fs-5 mt-0 text-center"></p>
+                        <h5 class="text-center">Main Features</h5>
+                        <p id="chipset" class="text-muted mb-0"></p>
+                        <p id="display-size" class="text-muted mb-0"></p>
+                        <p id="memory" class="text-muted mb-0"></p>
+                        <p id="storage" class="text-muted mb-0"></p>
+                        <p id="sensors" class="text-muted mb-0 d-block"></p>
+                        <h5 class="text-center">Others Features</h5>
+                        <p id="bluetooth" class="text-muted mb-0"></p>
+                        <p id="gps" class="text-muted mb-0"></p>
+                        <p id="nfc" class="text-muted mb-0"></p>
+                        <p id="radio" class="text-muted mb-0"></p>
+                        <p id="usb" class="text-muted mb-0"></p>
+                        <p id="wlan" class="text-muted mb-0"></p>
+                    </div>
+                    <div class="loading">
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal end -->
+
+    </main>
+
+    <!-- Footer Section start -->
+    <footer class="text-muted bg-light py-lg-5 py-4">
+        <div class="container">
+            <p class="float-end mb-1">
+                <a href="#" class="text-muted footer-text">Back to top</a>
+            </p>
+            <p class="mb-1">&copy; 2022. All rights reserved</p>
+        </div>
+    </footer>
+    <!-- Footer Section end -->
+
+    <!-- Link Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Link Sweet Alert -->
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Link Main JS File -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
